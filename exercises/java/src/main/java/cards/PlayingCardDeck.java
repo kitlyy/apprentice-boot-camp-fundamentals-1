@@ -1,5 +1,7 @@
 package cards;
 
+import java.util.Arrays;
+
 public class PlayingCardDeck {
     PlayingCard[] deck = new PlayingCard[52];
 
@@ -17,5 +19,12 @@ public class PlayingCardDeck {
             result[i] = deck[i].toString();
         }
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "PlayingCardDeck{" +
+                "deck=" + Arrays.toString(deck) +
+                '}';
     }
 }

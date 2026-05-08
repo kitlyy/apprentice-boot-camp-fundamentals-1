@@ -15,7 +15,7 @@ public class Suit {
             case 1 -> "diamonds";
             case 2 -> "hearts";
             case 3 -> "spades";
-            default -> throw new IllegalArgumentException("invalid suitValue: must be value 0-3");
+            default -> throw new IllegalArgumentException("invalid suitValue: must be 0-3");
         };
     }
 }
