@@ -30,6 +30,6 @@ class AnimalDeck {
     }
 
     public AnimalCard deal() {
-        return cards.remove(0);
+        return cards.removeFirst();
     }
 }
