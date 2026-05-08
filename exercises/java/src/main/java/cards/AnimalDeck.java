@@ -6,13 +6,13 @@ import java.util.List;
 
 class AnimalDeck implements Deck{
 
-    private List<AnimalCard> cards;
+    private final List<AnimalCard> cards;
 
     public AnimalDeck() {
-        cards = new ArrayList<>();
+        this.cards = new ArrayList<>();
         for (Animal animal : Animal.values()) {
-            cards.add(new AnimalCard(animal));
-            cards.add(new AnimalCard(animal));
+            this.cards.add(new AnimalCard(animal));
+            this.cards.add(new AnimalCard(animal));
         }
     }
 

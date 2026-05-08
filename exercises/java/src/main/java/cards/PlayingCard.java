@@ -1,6 +1,8 @@
 package cards;
 
-public class PlayingCard {
+import java.util.Objects;
+
+public class PlayingCard implements Card {
     private final Suit suit;
     private final int faceValue;
 
@@ -8,6 +10,11 @@ public class PlayingCard {
         this.suit = suit;
         this.faceValue = faceValue;
     }
+
+    public boolean snap( Card otherCard ){
+        return otherCard != null && this.equals(otherCard);
+    }
+
 
     @Override
     public String toString() {
@@ -20,5 +27,17 @@ public class PlayingCard {
             default -> throw new IllegalArgumentException("Invalid face value - must be 1-13");
         };
         return String.format("%s of %s", result, suit.toString());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PlayingCard that = (PlayingCard) o;
+        return faceValue == that.faceValue && Objects.equals(suit, that.suit);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(suit, faceValue);
     }
 }
