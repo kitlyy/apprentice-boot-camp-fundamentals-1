@@ -11,6 +11,6 @@ public class Cards {
     }
 
     public String[] getCards() {
-        return new PlayingCardDeck().getCards() ;
+        return new PlayingCardDeck().getCards();
     }
 }
