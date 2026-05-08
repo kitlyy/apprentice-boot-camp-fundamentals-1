@@ -1,6 +1,6 @@
 package cards;
 
-enum Animal {
+public enum Animal {
     AARDVARK,
     BABOON,
     CAMEL,
