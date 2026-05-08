@@ -15,13 +15,18 @@ public class PlayingCardDeck implements Deck{
                 this.deck.add(new PlayingCard(new Suit(suit), faceValue));
             }
         }
+        for (int suit = 0; suit < 4; suit++) {
+            for (int faceValue = 0; faceValue < 13; faceValue++) {
+                this.deck.add(new PlayingCard(new Suit(suit), faceValue));
+            }
+        }
     }
     public void shuffle() {
-        Collections.shuffle(new ArrayList<>(Collections.singletonList(deck)));
+        Collections.shuffle(this.deck);
     }
 
     public String[] getCards() {
-        String[] result = new String[52];
+        String[] result = new String[deck.size()];
         for (int i = 0; i < deck.size(); i++) {
             result[i] = deck.get(i).toString();
         }

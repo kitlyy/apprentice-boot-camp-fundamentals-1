@@ -15,7 +15,6 @@ public class PlayingCard implements Card {
         return otherCard != null && this.equals(otherCard);
     }
 
-
     @Override
     public String toString() {
         String result = switch (this.faceValue) {
@@ -33,7 +32,8 @@ public class PlayingCard implements Card {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         PlayingCard that = (PlayingCard) o;
-        return faceValue == that.faceValue && Objects.equals(suit, that.suit);
+//        return faceValue == that.faceValue && Objects.equals(suit, that.suit);
+        return faceValue == ((PlayingCard) o).faceValue;
     }
 
     @Override

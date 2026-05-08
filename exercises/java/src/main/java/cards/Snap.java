@@ -12,8 +12,9 @@ class Snap {
         deck.shuffle();
     }
 
+
     static void main(String[] args) {
-        Snap snap = new Snap(new AnimalDeck());
+        Snap snap = new Snap(new PlayingCardDeck());
         snap.play();
     }
 
