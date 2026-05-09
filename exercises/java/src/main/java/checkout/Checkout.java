@@ -5,6 +5,7 @@ class Checkout {
     private int numberOfA = 0;
     private int numberOfB = 0;
     private int numberOfC = 0;
+    private int numberOfD = 0;
     private Receipt receipt = new Receipt();
 
     void scan(String sku) {
@@ -25,6 +26,9 @@ class Checkout {
             numberOfA++;
             if (numberOfA % 3 == 0) {
                 total -= 20;
+                if (numberOfA % 4 == 0) {
+                    total -= 20;
+                }
             }
         } else if ("B".equals(sku)) {
             numberOfB++;
@@ -33,7 +37,12 @@ class Checkout {
             }
         } else if ("C".equals(sku)) {
             numberOfC++;
-            if (numberOfB % 2 == 0) {
+            if (numberOfC % 4 == 0) {
+                total -= 10;
+            }
+        } else if ("D".equals(sku)) {
+            numberOfD++;
+            if (numberOfD % 5 == 0) {
                 total -= 15;
             }
         }
