@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PlayingCardDeck implements Deck{
 //    PlayingCard[] deck = new PlayingCard[52];
-    private final List<PlayingCard> deck;
+    private final List<Card> deck;
 
     PlayingCardDeck() {
         this.deck = new ArrayList<>();
@@ -15,12 +15,8 @@ public class PlayingCardDeck implements Deck{
                 this.deck.add(new PlayingCard(new Suit(suit), faceValue));
             }
         }
-        for (int suit = 0; suit < 4; suit++) {
-            for (int faceValue = 0; faceValue < 13; faceValue++) {
-                this.deck.add(new PlayingCard(new Suit(suit), faceValue));
-            }
-        }
     }
+
     public void shuffle() {
         Collections.shuffle(this.deck);
     }
@@ -33,8 +29,13 @@ public class PlayingCardDeck implements Deck{
         return result;
     }
 
-    public PlayingCard deal() {
+    public Card deal() {
         return deck.removeFirst();
+    }
+
+    @Override
+    public List<Card> getListOfCards() {
+        return this.deck;
     }
 
     @Override
